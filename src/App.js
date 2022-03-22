@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import ToDoListMain from './ToDoListMain';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [toDo, setToDo] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    function fetchToDoList(){
+        fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(json => {setToDo(json); setLoading(false);})
+        console.log(toDo);
+    }
+    fetchToDoList();
+}, []);
+
+if(loading){
+  return "<h3>Loading</h3>";
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToDoListMain initialTodoList={toDo}></ToDoListMain>
     </div>
   );
 }
