@@ -1,9 +1,9 @@
+import './ToDoListItem.css'
 
-function ToDoListItem({toDo, deleteClickAction, completedClickAction }) {
-    return (<div>
+function ToDoListItem({toDo, completedClickAction }) {
+    return (<div className="todo-list-item">
   <h2>{toDo.title}</h2>
-  <button onClick={() => {completedClickAction(toDo)}}>Complete</button>
-  <button onClick={() => {deleteClickAction(toDo)}}>Delete</button>
+  <button className='button-complete' onClick={() => {completedClickAction(toDo)}}>Complete</button>
   </div> );
 }
 

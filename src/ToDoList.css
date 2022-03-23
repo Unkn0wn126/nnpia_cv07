@@ -1,0 +1,45 @@
+.wrapper{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f8ff;
+    padding: 0 10px;
+}
+
+.input-form{
+    display: flex;
+    justify-content: stretch;
+    margin: 10px 0;
+}
+
+.input-text{
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #f2f5f8;
+}
+
+.button-submit{
+    background-color: #860a0a;
+    color: #eeeeee;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+}
+
+.button-submit:hover{
+    background-color: #aa1d1d;
+    color: #eeeeee;
+}
+
+.button-submit:active{
+    background-color: #eeeeee;
+    color: #860a0a;
+}
+
+@media only screen and (min-width: 1000px) {
+    .wrapper{
+        width: 50%;
+    }
+  }
